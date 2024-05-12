@@ -1,0 +1,145 @@
+
+* {
+    box-sizing: border-box;
+}
+body {
+    width: 100vw;
+    font-size: 10px;
+    text-align: justify;
+}
+
+
+main {
+    width: 90%;
+    margin-left: 4em;
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+section {
+    width: 60%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+    padding-top: 5em;
+    margin-left: 2em;
+}
+
+aside {
+    width: 30%;
+    border: 2px grey solid;
+    padding: 1em;
+    resize: horizontal;
+    overflow: auto;
+
+    /*AQUI AÑADO LA PROPIEDAD DEL CONTENEDOR AL ELEMENTO*/
+
+    container-type: inline-size;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-top: 0;
+}
+
+article {
+    border: 2px lightgrey solid;
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.article__content {
+    width: 50%;
+    margin: 1em;
+}
+
+.article__image {
+    width: 15rem;
+    height:15rem;
+    margin: 1em;
+    background-color: rgb(193, 158, 226);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.article__image p {
+    font-style: italic;
+}
+
+.article__title {
+    margin-top: 0;
+    font-size: 2em;
+}
+
+.article__text {
+    font-size: 1.2em;
+}
+
+.article__button {
+    width: 100%;
+    margin-top: 1em;
+    padding: 1em;
+    border: none;
+    background-color: rgb(84, 62, 104);
+    color: rgb(235, 230, 240);
+    border-radius: 0.5em;
+}
+
+/*AQUI ESTOY LLAMANDO AT-RULE*/
+
+@container (max-width: 320px) {
+    
+
+    article {
+        flex-direction: column;
+        align-items: center;
+    }
+    .article__image {
+        width: 80cqw;
+        height: 80cqw;
+    }
+
+    .article__content {
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .article__title {
+        margin: 0;
+        font-size: 2.5em;
+    }
+
+    .article__text {
+        display: none;
+    }
+
+    .article__button {
+        margin: 0;
+        width: 50%;
+        background-color: bisque;
+        color: rgb(68, 22, 110);
+        font-weight: bold;
+    
+    }
+}
+
+@container (max-width: 290px) {
+    .article__content {
+        flex-direction: column;
+    }
+    .article__button {
+        width: 80%;
+        margin-top: 1em;
+    }
+}

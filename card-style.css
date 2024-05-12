@@ -1,0 +1,55 @@
+.card-container {
+    width: 70rem;
+    height: auto;
+    background-color: rgb(203, 223, 223);
+    margin: auto;
+    margin-top: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    resize: horizontal;
+    overflow: auto;
+    container-type: inline-size;
+    container-name: card_example;
+}
+
+.card-child {
+    width: 90%;
+    border: 2px rgb(115, 172, 158) solid;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1em;
+    padding: 1em;
+    margin: 2em;
+    text-align: justify;
+    
+}
+    img {
+        place-self: stretch;
+}
+h3 {
+    font-size: 1.5em;
+}
+
+@container card_example (max-width: 550px) {
+    .card-child {
+        grid-template-columns: 1fr;
+    }
+
+    img {
+        width: 60cqw;
+        margin: auto;
+        margin-top: 5em;
+    }
+
+    h3 {
+        text-align: center;
+        font-size: 2em;
+        margin-top: 0;
+    }
+
+    p {
+        font-size: 3.5cqb;
+    }
+
+}
